@@ -107,7 +107,7 @@ export function Benefits() {
           {/* Main container with glassmorphism effect */}
           <div className="relative rounded-3xl p-8 md:p-12 overflow-hidden">
             {/* Background gradients and blur effects */}
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-purple-900/20 to-blue-900/30 backdrop-blur-xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/20 via-purple-900/10 to-blue-900/15 backdrop-blur-xl"></div>
             <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-tl from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-purple-400/10 to-transparent rounded-full blur-3xl"></div>
@@ -132,10 +132,9 @@ export function Benefits() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
                 {successMetrics.map((metric, index) => (
                   <div key={index} className="group relative">
-                    {/* Card background with glassmorphism */}
-                    <div className="relative rounded-2xl p-6 bg-gradient-to-br from-slate-800/50 via-slate-700/30 to-slate-800/50 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300">
-                      {/* Card glow effect */}
-                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {/* Card background with minimal styling */}
+                    <div className="relative rounded-2xl p-6 bg-transparent border border-white/5 hover:border-white/15 transition-all duration-300">
+                      {/* Removed glow effect for cleaner look */}
                       
                       <div className="relative z-10">
                         <div className="text-center mb-6">
@@ -162,7 +161,7 @@ export function Benefits() {
                         
                         {/* Enhanced Progress Bar */}
                         <div className="relative">
-                          <div className="w-full h-4 bg-slate-700/50 rounded-full overflow-hidden backdrop-blur-sm border border-white/10">
+                          <div className="w-full h-4 bg-slate-700/30 rounded-full overflow-hidden border border-white/10">
                             <div 
                               className={`h-full bg-gradient-to-r ${metric.gradient} rounded-full transition-all duration-1000 ease-out group-hover:scale-105 relative shadow-lg`}
                               style={{ width: `${metric.value}%` }}
@@ -191,7 +190,7 @@ export function Benefits() {
               <div className="pt-8 border-t border-white/20">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="relative group">
-                    <div className="relative rounded-xl p-8 bg-gradient-to-br from-slate-800/50 via-slate-700/30 to-slate-800/50 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300">
+                    <div className="relative rounded-xl p-8 bg-transparent border border-white/5 hover:border-white/15 transition-all duration-300">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-t-xl"></div>
                       <div className="text-center">
                         <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2 drop-shadow-sm">
@@ -203,7 +202,7 @@ export function Benefits() {
                   </div>
                   
                   <div className="relative group">
-                    <div className="relative rounded-xl p-8 bg-gradient-to-br from-slate-800/50 via-slate-700/30 to-slate-800/50 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300">
+                    <div className="relative rounded-xl p-8 bg-transparent border border-white/5 hover:border-white/15 transition-all duration-300">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-t-xl"></div>
                       <div className="text-center">
                         <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2 drop-shadow-sm">
@@ -215,7 +214,7 @@ export function Benefits() {
                   </div>
                   
                   <div className="relative group">
-                    <div className="relative rounded-xl p-8 bg-gradient-to-br from-slate-800/50 via-slate-700/30 to-slate-800/50 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300">
+                    <div className="relative rounded-xl p-8 bg-transparent border border-white/5 hover:border-white/15 transition-all duration-300">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-t-xl"></div>
                       <div className="text-center">
                         <div className="text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-2 drop-shadow-sm">

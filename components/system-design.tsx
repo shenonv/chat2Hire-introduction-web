@@ -447,42 +447,6 @@ export function SystemDesign() {
           </div>
         </div>
 
-
-        {/* Development Process */}
-        <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Development Process
-            </h3>
-            <p className="text-gray-400 max-w-3xl mx-auto">
-              Agile methodology ensuring quality, adaptability, and continuous improvement throughout the development lifecycle
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {developmentProcess.map((process, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-2xl p-6 text-center hover:scale-105 transition-all duration-500 border border-white/10 hover:border-white/30"
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${process.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                
-                <div className="relative z-10">
-                  <div className={`w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${process.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg`}>
-                    <process.icon className="w-7 h-7 text-white" />
-                  </div>
-                  
-                  <h4 className="text-lg font-semibold text-white/90 mb-2">{process.name}</h4>
-                  <p className="text-gray-400 text-sm mb-3">{process.description}</p>
-                  <div className="inline-flex items-center space-x-1 text-xs text-gray-500">
-                    <Clock className="w-3 h-3" />
-                    <span>{process.duration}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
           {/* Process Flow */}
           <div className="mt-12 pt-8 border-t border-white/20">
             <div className="flex items-center justify-center space-x-8 text-gray-400">
@@ -507,7 +471,7 @@ export function SystemDesign() {
         </div>
 
         {/* Development Roadmap */}
-        <div className="mt-20 relative overflow-hidden">
+        <div className="mt-20 relative overflow-hidden max-w-7xl mx-auto">
           {/* Background Elements */}
           <div className="absolute inset-0">
             <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-2xl"></div>
@@ -658,7 +622,6 @@ export function SystemDesign() {
             </div>
           </div>
         </div>
-      </div>
     </section>
   )
 }
