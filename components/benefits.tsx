@@ -1,4 +1,4 @@
-import { Target, TrendingUp, Clock, DollarSign, Users, Shield } from "lucide-react"
+import { Target, TrendingUp, Clock, DollarSign, Users, Shield, CheckCircle, Star, TrendingUp as TrendingUpIcon, Headphones } from "lucide-react"
 
 export function Benefits() {
   const benefits = [
@@ -40,6 +40,41 @@ export function Benefits() {
     },
   ]
 
+  const successMetrics = [
+    {
+      icon: CheckCircle,
+      label: "Interview Success Rate",
+      value: 85,
+      gradient: "from-purple-500 to-pink-500",
+      bgGradient: "from-purple-500/20 to-pink-500/20",
+      description: "Users who secured jobs after using our platform"
+    },
+    {
+      icon: Star,
+      label: "User Satisfaction",
+      value: 92,
+      gradient: "from-blue-500 to-purple-500",
+      bgGradient: "from-blue-500/20 to-purple-500/20",
+      description: "Average satisfaction score from user feedback"
+    },
+    {
+      icon: TrendingUpIcon,
+      label: "Confidence Increase",
+      value: 78,
+      gradient: "from-purple-500 to-pink-500",
+      bgGradient: "from-purple-500/20 to-pink-500/20",
+      description: "Average confidence improvement reported by users"
+    },
+    {
+      icon: Headphones,
+      label: "Available Support",
+      value: 95,
+      gradient: "from-blue-500 to-purple-500",
+      bgGradient: "from-blue-500/20 to-purple-500/20",
+      description: "Platform uptime and support availability"
+    }
+  ]
+
   return (
     <section className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,25 +102,131 @@ export function Benefits() {
           ))}
         </div>
 
-        {/* Success Metrics */}
-        <div className="mt-20 glass rounded-3xl p-8 md:p-12">
-          <h3 className="text-2xl font-bold text-center mb-12 neon-text">Success Metrics</h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold gradient-primary bg-clip-text text-transparent mb-2">85%</div>
-              <div className="text-sm text-muted-foreground">Interview Success Rate</div>
+        {/* Success Metrics - Redesigned */}
+        <div className="mt-20 relative">
+          {/* Main container with glassmorphism effect */}
+          <div className="relative rounded-3xl p-8 md:p-12 overflow-hidden">
+            {/* Background gradients and blur effects */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-purple-900/20 to-blue-900/30 backdrop-blur-xl"></div>
+            <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-tl from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-purple-400/10 to-transparent rounded-full blur-3xl"></div>
+            
+            {/* Border glow effect */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/20 via-transparent to-blue-500/20 p-[1px]">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-500/10 via-transparent to-blue-500/10"></div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold gradient-accent bg-clip-text text-transparent mb-2">92%</div>
-              <div className="text-sm text-muted-foreground">User Satisfaction</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold gradient-primary bg-clip-text text-transparent mb-2">40%</div>
-              <div className="text-sm text-muted-foreground">Confidence Increase</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold gradient-accent bg-clip-text text-transparent mb-2">24/7</div>
-              <div className="text-sm text-muted-foreground">Available Support</div>
+            
+            <div className="relative z-10">
+              <div className="text-center mb-16">
+                <h3 className="text-4xl font-bold mb-6 text-white drop-shadow-lg">
+                  <span className="bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
+                    Success Metrics
+                  </span>
+                </h3>
+                <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                  Real results from users who transformed their interview preparation with Chat2Hire
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                {successMetrics.map((metric, index) => (
+                  <div key={index} className="group relative">
+                    {/* Card background with glassmorphism */}
+                    <div className="relative rounded-2xl p-6 bg-gradient-to-br from-slate-800/50 via-slate-700/30 to-slate-800/50 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300">
+                      {/* Card glow effect */}
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      
+                      <div className="relative z-10">
+                        <div className="text-center mb-6">
+                          {/* Icon container with gradient background */}
+                          <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${metric.bgGradient} mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg border border-white/20`}>
+                            <metric.icon className="w-8 h-8 text-white drop-shadow-sm" />
+                          </div>
+                          
+                          {/* Percentage with enhanced gradient */}
+                          <div className={`text-4xl font-bold bg-gradient-to-r ${metric.gradient} bg-clip-text text-transparent mb-3 drop-shadow-sm`}>
+                            {metric.value}%
+                          </div>
+                          
+                          {/* Metric title */}
+                          <div className="text-base font-semibold text-white mb-2 drop-shadow-sm">
+                            {metric.label}
+                          </div>
+                          
+                          {/* Description */}
+                          <div className="text-sm text-gray-400 leading-relaxed mb-6">
+                            {metric.description}
+                          </div>
+                        </div>
+                        
+                        {/* Enhanced Progress Bar */}
+                        <div className="relative">
+                          <div className="w-full h-4 bg-slate-700/50 rounded-full overflow-hidden backdrop-blur-sm border border-white/10">
+                            <div 
+                              className={`h-full bg-gradient-to-r ${metric.gradient} rounded-full transition-all duration-1000 ease-out group-hover:scale-105 relative shadow-lg`}
+                              style={{ width: `${metric.value}%` }}
+                            >
+                              {/* Progress bar shine effect */}
+                              <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-white/10 to-transparent"></div>
+                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
+                            </div>
+                          </div>
+                          
+                          {/* Enhanced progress indicator */}
+                          <div 
+                            className={`absolute -top-1 w-3 h-6 bg-gradient-to-b ${metric.gradient} rounded-full transition-all duration-300 group-hover:scale-125 shadow-lg border border-white/20`}
+                            style={{ left: `calc(${metric.value}% - 6px)` }}
+                          >
+                            <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-transparent rounded-full"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Enhanced Additional stats row */}
+              <div className="pt-8 border-t border-white/20">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="relative group">
+                    <div className="relative rounded-xl p-8 bg-gradient-to-br from-slate-800/50 via-slate-700/30 to-slate-800/50 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300">
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-t-xl"></div>
+                      <div className="text-center">
+                        <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2 drop-shadow-sm">
+                          5
+                        </div>
+                        <div className="text-sm text-gray-300 font-medium">Questions Per Session</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="relative group">
+                    <div className="relative rounded-xl p-8 bg-gradient-to-br from-slate-800/50 via-slate-700/30 to-slate-800/50 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300">
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-t-xl"></div>
+                      <div className="text-center">
+                        <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2 drop-shadow-sm">
+                          500+
+                        </div>
+                        <div className="text-sm text-gray-300 font-medium">Job Roles Supported</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="relative group">
+                    <div className="relative rounded-xl p-8 bg-gradient-to-br from-slate-800/50 via-slate-700/30 to-slate-800/50 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300">
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-t-xl"></div>
+                      <div className="text-center">
+                        <div className="text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-2 drop-shadow-sm">
+                          24/7
+                        </div>
+                        <div className="text-sm text-gray-300 font-medium">Platform Availability</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
