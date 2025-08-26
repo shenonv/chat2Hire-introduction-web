@@ -2,8 +2,11 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles, Brain, Target } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 export function HeroSection() {
+  const router = useRouter()
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated background elements */}
@@ -44,7 +47,7 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
+            <Button onClick={() => router.push("http://localhost:3000")}
               size="lg"
               className="gradient-primary neon-glow hover:scale-105 transition-all duration-300 text-lg px-8 py-4"
             >
