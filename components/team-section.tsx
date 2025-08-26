@@ -1,4 +1,15 @@
+"use client"
+
 import { User, Github, Linkedin, Mail } from "lucide-react"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 
 export function TeamSection() {
   const teamMembers = [
@@ -8,6 +19,14 @@ export function TeamSection() {
       id: "CL/HDCSE/CMU/121/04",
       responsibilities: "Backend development, AI integration, database design",
       avatar: "./professional-developer-avatar.jpg",
+      detailedResponsibilities: [
+        "I create and design the database structure.",
+        "I develop the logic for the backend system and incorporate AI models.",
+        "I assure effective database performance and safe data storage.",
+        "I use NestJS to manage server-side development.",
+        "I connect front-end and AI modules to the database.",
+        "I execute system deployments and integrations."
+      ]
     },
     {
       name: "Sawanee Anulya Wedamestrige",
@@ -15,6 +34,14 @@ export function TeamSection() {
       id: "CL/HDCSE/CMU/121/52",
       responsibilities: "Project coordination, planning, risk management",
       avatar: "./professional-manager-avatar.jpg",
+      detailedResponsibilities: [
+        "Comprehensive planning, scheduling, and coordination of the project.",
+        "Keep an eye on developments and make sure due dates are fulfilled.",
+        "Monitor task distribution and team communication.",
+        "Problem solving and risk management.",
+        "Reporting and communication with clients.",
+        "Make sure the project stays within the allocated budget and scope."
+      ]
     },
     {
       name: "Madara Priyankara",
@@ -22,6 +49,14 @@ export function TeamSection() {
       id: "CL/HDCSE/CMU/121/79",
       responsibilities: "Requirements analysis, system workflows, documentation",
       avatar: "./professional-analyst-avatar.jpg",
+      detailedResponsibilities: [
+        "Generate and evaluate user needs.",
+        "Create requirements that are both functional and non-functional.",
+        "Examine current issues and provide fixes for the system.",
+        "Perform feasibility analyses.",
+        "Keep track of workflows and system procedures.",
+        "Serve as an intermediate between stakeholders and the technical team."
+      ]
     },
     {
       name: "Galle Arachchige Sanuki Lithanga Perera",
@@ -29,6 +64,13 @@ export function TeamSection() {
       id: "CL/HDCSE/CMU/121/36",
       responsibilities: "UI/UX design, system architecture, interface mockups",
       avatar: "./professional-designer-avatar.jpg",
+      detailedResponsibilities: [
+        "Create the data flow and system architecture.",
+        "Produce system interface designs and UI/UX mockups.",
+        "Explain the system's modules and how they work together.",
+        "Create thorough documentation for the system design.",
+        "Work together with developers to guarantee the viability of the design."
+      ]
     },
     {
       name: "Aldeen Sathyanathan",
@@ -36,6 +78,14 @@ export function TeamSection() {
       id: "CL/HDCSE/CMU/121/67",
       responsibilities: "Testing strategies, quality control, bug tracking",
       avatar: "./qa-engineer-avatar.jpg",
+      detailedResponsibilities: [
+        "Develop and carry out test cases and test strategies.",
+        "Perform security, performance, integration, and functional testing.",
+        "Identify bugs, monitor problems, and make sure they are fixed.",
+        "Verify the reliability of AI question creation and evaluation.",
+        "Before deployment, make sure the system is stable.",
+        "Developing final quality assurance reports and assistance for user acceptability testing (UAT)."
+      ]
     },
   ]
 
@@ -51,43 +101,76 @@ export function TeamSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
-            <div
-              key={index}
-              className="glass glass-hover rounded-2xl p-8 text-center group hover:scale-105 transition-all duration-300"
-            >
-              {/* Avatar */}
-              <div className="relative mb-6">
-                <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center group-hover:animate-pulse-glow">
-                  <img
-                    src={member.avatar || "/placeholder.svg"}
-                    alt={member.name}
-                    className="w-20 h-20 rounded-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full flex items-center justify-center neon-glow">
-                  <User className="w-3 h-3 text-white" />
-                </div>
-              </div>
+            <AlertDialog key={index}>
+              <AlertDialogTrigger asChild>
+                <div className="glass glass-hover rounded-2xl p-8 text-center group hover:scale-105 transition-all duration-300 cursor-pointer">
+                  {/* Avatar */}
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center group-hover:animate-pulse-glow">
+                      <img
+                        src={member.avatar || "/placeholder.svg"}
+                        alt={member.name}
+                        className="w-20 h-20 rounded-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full flex items-center justify-center neon-glow">
+                      <User className="w-3 h-3 text-white" />
+                    </div>
+                  </div>
 
-              {/* Info */}
-              <h3 className="text-lg font-bold mb-2">{member.name}</h3>
-              <div className="text-sm text-primary font-semibold mb-2">{member.role}</div>
-              <div className="text-xs text-muted-foreground mb-4 font-mono">{member.id}</div>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-6">{member.responsibilities}</p>
+                  {/* Info */}
+                  <h3 className="text-lg font-bold mb-2">{member.name}</h3>
+                  <div className="text-sm text-primary font-semibold mb-2">{member.role}</div>
+                  <div className="text-xs text-muted-foreground mb-4 font-mono">{member.id}</div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{member.responsibilities}</p>
 
-              {/* Social Links */}
-              <div className="flex justify-center space-x-3">
-                <div className="w-8 h-8 glass glass-hover rounded-full flex items-center justify-center cursor-pointer">
-                  <Github className="w-4 h-4 text-muted-foreground hover:text-primary transition-colors" />
+                  {/* Social Links */}
+                  <div className="flex justify-center space-x-3">
+                    <div className="w-8 h-8 glass glass-hover rounded-full flex items-center justify-center cursor-pointer">
+                      <Github className="w-4 h-4 text-muted-foreground hover:text-primary transition-colors" />
+                    </div>
+                    <div className="w-8 h-8 glass glass-hover rounded-full flex items-center justify-center cursor-pointer">
+                      <Linkedin className="w-4 h-4 text-muted-foreground hover:text-primary transition-colors" />
+                    </div>
+                    <div className="w-8 h-8 glass glass-hover rounded-full flex items-center justify-center cursor-pointer">
+                      <Mail className="w-4 h-4 text-muted-foreground hover:text-primary transition-colors" />
+                    </div>
+                  </div>
                 </div>
-                <div className="w-8 h-8 glass glass-hover rounded-full flex items-center justify-center cursor-pointer">
-                  <Linkedin className="w-4 h-4 text-muted-foreground hover:text-primary transition-colors" />
+              </AlertDialogTrigger>
+              
+              <AlertDialogContent className="max-w-2xl bg-background/80 backdrop-blur-xl border-2 border-primary/50 shadow-2xl shadow-primary/40 rounded-2xl">
+                <AlertDialogHeader className="bg-gradient-to-r from-primary/30 to-secondary/30 rounded-xl p-3 mb-3 border border-primary/40">
+                  <AlertDialogTitle className="text-xl font-bold text-primary mb-1 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    {member.name}
+                  </AlertDialogTitle>
+                  <div className="text-base font-semibold text-secondary mb-1">
+                    {member.role}
+                  </div>
+                  <div className="text-xs text-muted-foreground font-mono bg-background/60 rounded-lg px-2 py-1 inline-block border border-primary/20">
+                    {member.id}
+                  </div>
+                </AlertDialogHeader>
+                
+                <div className="space-y-3 bg-gradient-to-br from-background/40 to-background/20 rounded-xl p-4 border border-primary/30">
+                  <div>
+                    <h4 className="font-semibold text-primary mb-3 text-base bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Key Responsibilities:</h4>
+                    <ul className="space-y-2">
+                      {member.detailedResponsibilities.map((responsibility, idx) => (
+                        <li key={idx} className="flex items-start space-x-2 bg-background/50 rounded-lg p-2 border border-primary/20 hover:bg-background/70 transition-all duration-300">
+                          <span className="text-primary mt-0.5 text-sm">•</span>
+                          <span className="text-xs leading-relaxed text-white">{responsibility}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div className="w-8 h-8 glass glass-hover rounded-full flex items-center justify-center cursor-pointer">
-                  <Mail className="w-4 h-4 text-muted-foreground hover:text-primary transition-colors" />
-                </div>
-              </div>
-            </div>
+                
+                <AlertDialogAction className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold rounded-xl px-4 py-2 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300">
+                  Close
+                </AlertDialogAction>
+              </AlertDialogContent>
+            </AlertDialog>
           ))}
         </div>
 
