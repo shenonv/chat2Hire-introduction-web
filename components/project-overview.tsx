@@ -171,6 +171,106 @@ export function ProjectOverview() {
             ))}
           </div>
         </div>
+
+        {/* System Aim & Objectives */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center space-x-2 glass rounded-full px-4 py-2 mb-4">
+              <Sparkles className="w-4 h-4 text-accent" />
+              <span className="text-sm font-medium">System Vision</span>
+            </div>
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">System Aim & Objectives</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Clear vision and strategic goals driving our platform development
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* System Aim */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative glass glass-hover rounded-2xl p-8 border border-primary/20 overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-accent/10 to-transparent rounded-full translate-y-12 -translate-x-12"></div>
+                
+                <div className="relative">
+                  <div className="flex items-center space-x-3 mb-8">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center shadow-lg">
+                      <Target className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">System Aim</h3>
+                      <p className="text-sm text-muted-foreground">Our mission and vision</p>
+                    </div>
+                  </div>
+                  <div className="space-y-6">
+                    <div className="relative">
+                      <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-primary/50 to-accent/50 rounded-full"></div>
+                      <p className="text-muted-foreground leading-relaxed pl-6 text-base">
+                        To develop an intelligent and user-friendly web platform that enables job seekers to practice for job interviews by generating customized AI-driven questions, providing real-time feedback, and tracking their performance to improve their interview readiness.
+                      </p>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <h4 className="text-lg font-semibold text-primary">Key Focus Areas:</h4>
+                      <div className="space-y-3">
+                        {[
+                          "Intelligent AI-driven question generation tailored to specific job roles and industries",
+                          "Real-time feedback system with comprehensive scoring and improvement suggestions",
+                          "Personalized dashboard for tracking progress and identifying improvement areas"
+                        ].map((focus, index) => (
+                          <div key={index} className="flex items-start space-x-3 p-3 rounded-lg hover:bg-primary/5 transition-all duration-300">
+                            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mt-0.5 shadow-sm">
+                              <div className="w-2 h-2 rounded-full bg-primary"></div>
+                            </div>
+                            <p className="text-sm text-muted-foreground leading-relaxed">{focus}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* System Objectives */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-transparent to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative glass glass-hover rounded-2xl p-8 border border-secondary/20 overflow-hidden">
+                <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-secondary/10 to-transparent rounded-full -translate-y-14 -translate-x-14"></div>
+                <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-primary/10 to-transparent rounded-full translate-y-10 translate-x-10"></div>
+                
+                <div className="relative">
+                  <div className="flex items-center space-x-3 mb-8">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center shadow-lg">
+                      <CheckCircle className="w-6 h-6 text-secondary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">System Objectives</h3>
+                      <p className="text-sm text-muted-foreground">Key goals we aim to achieve</p>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    {[
+                      "Design an AI-based engine that generates role-specific interview questions dynamically.",
+                      "Give users immediate scoring and thorough feedback on their responses.",
+                      "Give people access to a customized dashboard so they can track their progress.",
+                      "Provide online access to the system at all times for flexible, self-paced practice.",
+                      "Ensure the system supports multiple job roles across various industries."
+                    ].map((objective, index) => (
+                      <div key={index} className="group/item flex items-start space-x-3 p-3 rounded-xl hover:bg-secondary/5 transition-all duration-300">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center mt-0.5 shadow-sm group-hover/item:scale-110 transition-transform duration-300">
+                          <div className="w-3 h-3 rounded-full bg-gradient-to-br from-secondary to-primary"></div>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed group-hover/item:text-foreground transition-colors duration-300">{objective}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
