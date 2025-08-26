@@ -47,7 +47,7 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button onClick={() => router.push("http://localhost:3000")}
+            <Button 
               size="lg"
               className="gradient-primary neon-glow hover:scale-105 transition-all duration-300 text-lg px-8 py-4"
             >
