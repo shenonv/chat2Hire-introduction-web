@@ -54,7 +54,7 @@ export function HeroSection() {
               Start Practicing
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="glass-hover text-lg px-8 py-4 bg-transparent">
+            <Button size="lg" variant="outline" className="glass-hover text-lg  py-4 px-8 bg-transparent">
               View Demo
             </Button>
           </div>
